@@ -7,6 +7,11 @@ body {
     bottom: 35px;
 }
 
+.title-header {
+    border-left: 4px solid white;
+    padding-left: 10px;
+}
+
 .header-content__info {
     text-align: left;
 }
@@ -107,11 +112,13 @@ body {
     color: #223645;
     margin-bottom: 20px;
     text-align: center;
+    font-family: 'Exo 2', sans-serif;
 }
 
 .about p {
     text-align: center;
     font-size: 13px;
+    font-family: 'Exo 2', sans-serif;
 }
 
 .btn-about {
@@ -135,6 +142,7 @@ body {
 
 .project {
     margin: 10px;
+    overflow: hidden;
 }
 
 .project .project-image {
@@ -143,6 +151,11 @@ body {
     object-fit: cover;
     overflow: hidden;
     position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover .project-image {
+    transform: scale(1.2);
 }
 
 .project .project-icon {
@@ -185,13 +198,16 @@ body {
 .project-info p {
     font-size: 13px;
     margin-top: 20px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500 !important;
 }
 
 .project-info h6 {
     display: inline-block;
-    font-weight: bold;
     font-size: 18px;
     margin-left: 10px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800 !important;
 }
 
 .health {
@@ -215,6 +231,8 @@ body {
 
 .health-content__title {
     font-size: 2.5rem;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700 !important;
 }
 
 .health-content__content {
@@ -246,6 +264,8 @@ body {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700 !important;
 }
 
 .container-team {
@@ -257,11 +277,17 @@ body {
 .team-member {
     position: relative;
     text-align: center;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.team-member:hover img {
+    transform: scale(1.1);
 }
 
 .team-member img {
     position: relative;
     width: 97%;
+    transition: transform 0.3s ease-in-out;
 }
 
 .team-member::after,
@@ -269,7 +295,6 @@ body {
     content: "";
     position: absolute;
     background-color: #f2faff;
-    /* opacity: 0.5; */
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -503,6 +528,16 @@ body {
     left: 0;
     transform: translateY(-80%);
     z-index: -1;
+    animation: map-animation 2s ease-in infinite alternate;
+}
+
+@keyframes map-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .footer-about {
@@ -592,3 +627,18 @@ body {
 .social-media__yt:hover {
     color: #e21b1b !important;
 }
+
+.value {
+    animation: countUp 1s ease;
+  }
+  
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
