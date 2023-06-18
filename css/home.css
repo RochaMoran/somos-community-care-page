@@ -570,3 +570,25 @@ body {
     margin: 0;
     font-weight: 600;
 }
+
+.social-media__item {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: gray;
+}
+
+.social-media__tw:hover {
+    color: #1da1f2 !important;
+}
+
+.social-media__fb:hover {
+    color: #3b5998 !important;
+}
+
+.social-media__ig:hover {
+    color: #c32aa3 !important;
+}
+
+.social-media__yt:hover {
+    color: #e21b1b !important;
+}
