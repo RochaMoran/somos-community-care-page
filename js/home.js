@@ -73,14 +73,23 @@ document.querySelectorAll(".static-heathcare").forEach((static) => {
   });
 });
 
+
 //statistics animation
 function animateValue(element, start, end, duration) {
+  const options = {
+    useGrouping: true,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  };
+
   let startTimestamp = null;
   const step = (timestamp) => {
     if (!startTimestamp) startTimestamp = timestamp;
     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
     const value = Math.floor(progress * (end - start) + start);
-    element.textContent = value.toLocaleString().replace(/\./g, ",");
+    const formattedValue = end === 2500 ? "+" + value.toLocaleString(undefined, options) : value.toLocaleString(undefined, options);
+
+    element.textContent = formattedValue.replace(/\./g, ",");
     if (progress < 1) {
       window.requestAnimationFrame(step);
     }
